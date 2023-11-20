@@ -1,5 +1,9 @@
 # OpenXpeng
 
+![](https://img.shields.io/badge/%E5%B0%8F%E9%B9%8F-P5-blue)
+![](https://img.shields.io/badge/%E7%89%88%E6%9C%AC-3.6.1-green)
+[![](https://jitpack.io/v/open-xpeng/android_sdk.svg)](https://jitpack.io/#open-xpeng/android_sdk)
+
 ## 臭·搞技术的
 
 这是一个小鹏非公开的安卓SDK，主要是为了方便安卓开发者调用车辆的一些功能。
@@ -43,6 +47,10 @@
 ### 1. 添加依赖
 
 在项目的`build.gradle`中添加以下依赖：
+
+```
+compileOnly 'com.github.open-xpeng:android_sdk:1.0.2'
+```
 
 ### 2. 调用相关功能
 
