@@ -1,0 +1,17 @@
+[versions]
+agp         = "8.0.0"
+compileSdk  = '33'
+minSdk      = '24'
+
+[libraries]
+core-java  = "androidx.core:core:1.10.1"
+appcompat  = "androidx.appcompat:appcompat:1.6.1"
+constraint = "androidx.constraintlayout:constraintlayout:2.1.4"
+material   = "com.google.android.material:material:1.9.0"
+
+[plugins]
+android = { id = "com.android.application", version.ref = "agp" }
+library = { id = "com.android.library"    , version.ref = "agp" }
+
+
+

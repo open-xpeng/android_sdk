@@ -1,0 +1,21 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = crlf
+indent_size = 4
+indent_style = space
+insert_final_newline = false
+max_line_length = 256
+tab_width = 4
+
+[{*.kts,*.kt}]
+ij_continuation_indent_size = 4
+ij_kotlin_align_in_columns_case_branch = true
+ij_kotlin_align_multiline_binary_operation = true
+ij_kotlin_align_multiline_extends_list = true
+ij_kotlin_field_annotation_wrap = off
+ij_kotlin_line_break_after_multiline_when_entry = false
+
+[*.java]
+ij_java_align_group_field_declarations = true

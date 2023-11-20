@@ -1,0 +1,42 @@
+apply plugin: 'com.android.application'
+
+android {
+    namespace 'io.github.open.xpeng.demo'
+    compileSdk libs.versions.compileSdk.get().toInteger()
+
+    defaultConfig {
+        applicationId "io.github.open.xpeng.demo"
+        minSdk libs.versions.minSdk.get().toInteger()
+        targetSdk libs.versions.compileSdk.get().toInteger()
+        versionCode 1
+        versionName "1.0.1"
+        setProperty('archivesBaseName', "OpenXPeng-$versionName-$versionCode-" + (new Date()).format('yyyyMMdd'))
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        viewBinding true
+        buildConfig true
+    }
+    buildTypes {
+        release {
+            debuggable true
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation libs.core.java
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.constraint
+
+    // fix: Duplicate class kotlin-stdlib-1.8.10 -> kotlin-stdlib-jdk8-1.6.21
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
+
+    compileOnly project(":hidden-api-stub")
+}
