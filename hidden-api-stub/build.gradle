@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
 
 android {
     namespace 'io.github.open.xpeng.hidden'
@@ -16,9 +17,29 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    publishing {
+        singleVariant("release") {
+            withJavadocJar()
+            withSourcesJar()
+        }
+    }
 }
 
 dependencies {
     compileOnly libs.core.java
     compileOnly libs.appcompat
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'io.github.open.xpeng'
+                artifactId = 'sdk'
+                version = '1.0.2'
+            }
+        }
+    }
 }
